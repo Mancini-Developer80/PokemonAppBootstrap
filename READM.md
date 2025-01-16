@@ -23,3 +23,4 @@ This is a web-based application that allows users to browse a list of Pokémon a
    ```bash
    git clone https://github.com/yourusername/pokemon-app.git
    cd pokemon-app
+   ```
