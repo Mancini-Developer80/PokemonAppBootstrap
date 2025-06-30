@@ -109,36 +109,23 @@ const pokemonRepository = (function () {
 
   function addListItem(pokemon) {
     const pokemonContainer = document.querySelector('.pokemon-app');
-    const pokemonList = document.createElement('ul');
-    const pokemonItem = document.createElement('li');
-    const pokemonName = document.createElement('h2');
-    const pokemonUrl = document.createElement('h3');
-    const button = document.createElement('button');
+    const card = document.createElement('div');
+    card.classList.add('pokemon-card');
 
+    const pokemonName = document.createElement('h2');
+    pokemonName.innerText =
+      pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
+
+    const button = document.createElement('button');
+    button.classList.add('btn', 'btn-primary');
+    button.innerText = 'Details';
     button.addEventListener('click', function () {
       showDetails(pokemon);
     });
 
-    pokemonList.classList.add('list-group');
-    pokemonItem.classList.add(
-      'list-group-item',
-      'd-flex',
-      'justify-content-between',
-      'align-items-center',
-      'flex-column',
-      'border-bottom',
-      'p-3',
-      'w-50'
-    );
-    button.classList.add('btn', 'btn-primary');
-    button.innerText = 'Click Here';
-    pokemonName.innerText =
-      pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
-    pokemonUrl.innerText = pokemon.url;
-
-    pokemonItem.appendChild(pokemonName);
-    pokemonList.appendChild(pokemonItem);
-    pokemonContainer.appendChild(pokemonItem).appendChild(button);
+    card.appendChild(pokemonName);
+    card.appendChild(button);
+    pokemonContainer.appendChild(card);
   }
 
   function showDetails(item) {
