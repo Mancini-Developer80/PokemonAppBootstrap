@@ -21,6 +21,6 @@ This is a web-based application that allows users to browse a list of Pokémon a
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/pokemon-app.git
+   git clone https://github.com/Mancini-Developer80/pokemon-app.git
    cd pokemon-app
    ```
